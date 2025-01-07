@@ -1,0 +1,29 @@
+[
+    {
+        "id": 2,
+        "name": "ww",
+        "age": 12,
+        "grade": "1",
+        "subjects": [
+            "sefsdf"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "ratna",
+        "age": 32,
+        "grade": "12",
+        "subjects": [
+            "maths"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "sri",
+        "age": 12,
+        "grade": "14",
+        "subjects": [
+            "computers"
+        ]
+    }
+]
