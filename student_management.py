@@ -120,4 +120,4 @@ if __name__ == "__main__":
             save_students_to_file(list_students,fileName)
             break
         else:
-            print("Invalid option. Please try again.\n")
+            print("Invalid option.Please try again.\n")
