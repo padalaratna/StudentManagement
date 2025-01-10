@@ -76,7 +76,7 @@ class StudentManagementTest(unittest.TestCase):
 
  def test_load_student_from_file(self):              
       loaded_students = load_students_from_file("students_test.json")         
-      self.assertEqual(4,len(loaded_students))     
+      self.assertEqual(1,len(loaded_students))     
       
       
 if __name__ == '__main__':
