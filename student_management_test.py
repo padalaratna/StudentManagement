@@ -75,8 +75,7 @@ class StudentManagementTest(unittest.TestCase):
       save_students_to_file(list_students,"students_test.json");
 
  def test_load_student_from_file(self):              
-      loaded_students = load_students_from_file("students_test.json")     
-      print("load from file") 
+      loaded_students = load_students_from_file("students_test.json")         
       self.assertEqual(4,len(loaded_students))     
       
       
