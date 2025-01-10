@@ -1,0 +1,12 @@
+[
+    {
+        "id": 5,
+        "name": "Albert Einstein",
+        "age": 42,
+        "grade": 4,
+        "subjects": [
+            "['english'",
+            "'maths']"
+        ]
+    }
+]

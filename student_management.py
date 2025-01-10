@@ -1,7 +1,7 @@
 import json
 
 # Define the Students class
-class Student:
+class StudentManagement:
     def __init__(self, id, name, age, grade, subjects):
         self.id = id
         self.name = name
@@ -18,7 +18,7 @@ class Student:
             "subjects": self.subjects
         }
 
-# Add a new student
+ # Add a new student
 def add_student(list_students):
     id = int(input("Enter your ID: \n"))
     name = input("Enter your name: \n")
@@ -27,7 +27,7 @@ def add_student(list_students):
     subjects = input("Enter your subjects (comma-separated): \n").split(',')
 
     # Create an instance of the Students class
-    student = Student(id, name, age, grade, [subject.strip() for subject in subjects])
+    student = StudentManagement(id, name, age, grade, [subject.strip() for subject in subjects])
     list_students.append(student)
     print("Student added successfully!\n")
 
@@ -78,25 +78,26 @@ def view_student(list_students):
               f"Grade: {student_data['grade']}, Subjects: {', '.join(student_data['subjects'])}\n")
 
 # Save students to a file
-def save_students_to_file(list_students, filename="students.json"):
+def save_students_to_file(list_students, filename):
     with open(filename, "w") as file:
         data = [student.display() for student in list_students]
         json.dump(data, file, indent=4)
     print(f"Students saved to {filename}\n")
 
 # Load students from a file
-def load_students_from_file(filename="students.json"):
+def load_students_from_file(filename):
     try:
         with open(filename, "r") as file:
-            data = json.load(file)
-            return [Student(**item) for item in data]
+            data = json.load(file)           
+            return [StudentManagement(**item) for item in data]
     except FileNotFoundError:
         print(f"{filename} not found. Starting with an empty list.\n")
         return []
 
 # Main program
 if __name__ == "__main__":
-    list_students = load_students_from_file()
+    fileName="students.json";
+    list_students = load_students_from_file(fileName)
 
     while True:
         print("\n--- Student Management System ---")
@@ -116,7 +117,7 @@ if __name__ == "__main__":
         elif user_input == 4:
             delete_student(list_students)
         elif user_input == 5:
-            save_students_to_file(list_students)
+            save_students_to_file(list_students,fileName)
             break
         else:
             print("Invalid option. Please try again.\n")
