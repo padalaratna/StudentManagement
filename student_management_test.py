@@ -6,14 +6,14 @@ class StudentManagementTest(unittest.TestCase):
    
  @mock.patch('student_management.input', create=True) 
  def test_add_student(self,mocked_input):    
-      list_students = [];
+      list_students = []
       mocked_input.side_effect = [1,'Albert Einstein', 42, 4,"['english','telugu']"]
       add_student(list_students)
       self.assertEqual(1,len(list_students))       
 
  @mock.patch('student_management.input', create=True)
  def test_update_student_name(self,mocked_input):    
-      list_students = [];   
+      list_students = []  
       mocked_input.side_effect = [1,'Albert Einstein', 42, 4,"['english','telugu']",1,1,'ratna']
       add_student(list_students)
       update_student(list_students)
